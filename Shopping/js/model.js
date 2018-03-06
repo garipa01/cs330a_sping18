@@ -56,8 +56,7 @@ class Subject {
 class ShoppingList extends Subject {
     constructor() {
         super()
-        this.newItems = []
-        this.oldItems = [];
+        this.newItems = [];
     }
 
     addItem(it) {
