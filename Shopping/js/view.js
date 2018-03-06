@@ -1,6 +1,6 @@
 class View {
     constructor(model) {
-        model.subscribe(this.redrawList)
+        model.subscribe(this.redrawList.bind(this))
     }
 
     redrawList(shoppingList, msg) {
