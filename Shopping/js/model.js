@@ -7,9 +7,7 @@ class Item {
         this.store = store;
         this.section = section;
         this.price = price;
-
         this._purchased = false;
-
     }
 
     get purchased() {
@@ -19,9 +17,6 @@ class Item {
     set purchased(nv) {
         this._purchased = nv;
     }
-
-
-
 }
 
 class Subject {
@@ -51,7 +46,6 @@ class Subject {
         }
     }
 }
-
 
 class ShoppingList extends Subject {
     constructor() {
