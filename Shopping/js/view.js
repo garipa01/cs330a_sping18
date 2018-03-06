@@ -6,7 +6,7 @@ class View {
     redrawList(shoppingList, msg) {
         let tbl = document.getElementById("shoppinglist")
         tbl.innerHTML = ""
-        for (let item of shoppingList.newItems) {
+        for (let item of shoppingList.Items) {
             this.addRow(item, tbl)
         }
     }
