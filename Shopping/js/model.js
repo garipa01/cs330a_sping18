@@ -56,11 +56,11 @@ class Subject {
 class ShoppingList extends Subject {
     constructor() {
         super()
-        this.newItems = [];
+        this.Items = [];
     }
 
     addItem(it) {
-        this.newItems.push(it)
+        this.Items.push(it)
         this.publish('newitem', this)
     }
 }
