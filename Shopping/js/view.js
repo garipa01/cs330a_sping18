@@ -4,10 +4,10 @@ class View {
     }
 
     redrawList(shoppingList, msg) {
-        let tbl = document.getElementById("shoppinglist")
-        tbl.innerHTML = ""
+        let tb = document.getElementById("shoppinglist")
+        tb.innerHTML = ""
         for (let item of shoppingList.Items) {
-            this.addRow(item, tbl)
+            this.addRow(item, tb)
         }
     }
 
