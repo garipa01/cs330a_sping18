@@ -62,25 +62,25 @@ class ShoppingList extends Subject {
         this.Items = [];
     }
 
-    addItem(item) {
-        this.Items.push(item)
+    addItem(it) {
+        this.Items.push(it);
         let self = this;
-        item.subscribe(function(a,b){
-            self.publish('starting to remove',self)
-            if(item.purchased == true) {
-                item.to = setTimeout(function() {
-                    self.removeItem(item);
-                },2000)
+        it.subscribe(function(a,b) {
+            self.publish('removed_start', self)
+            if(it.purchased == true) {
+                it.to = setTimeout(function() {
+                    self.removeItem(it);
+                }, 2000)
             }
         });
-        this.publish('added item',this)
+        this.publish('newitem', this)
     }
 
-    removeItem(item){
-        let index = this.Item.indexOf(item);
-        if(idex > -1){
-            let item = this.Item.splice(index,1)
+    removeItem(it) {
+        let idx = this.Items.indexOf(it);
+        if(idx > -1) {
+            let it = this.Items.splice(idx, 1)
         }
-        this.publish('done removing',this)
+        this.publish('removed_final', this)
     }
 }
