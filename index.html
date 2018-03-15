@@ -74,7 +74,12 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th></th><th>Item</th><th>Quantity</th><th>Store</th><th>Section</th><th>Price</th>
+                        <th></th>
+                        <th scope="col" onclick="sortCol(this)">Item</th>
+                        <th scope="col" onclick="sortCol(this)">Quantity</th>
+                        <th scope="col" onclick="sortCol(this)">Store</th>
+                        <th scope="col" onclick="sortCol(this)">Section</th>
+                        <th scope="col" onclick="sortCol(this)">Price</th>
                     </tr>
                 </thead>
                 <tbody id="shoppinglist"></tbody>

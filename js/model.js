@@ -83,4 +83,21 @@ class ShoppingList extends Subject {
         }
         this.publish('removed_final', this)
     }
+
+    sortItems(property) {
+        if (typeof(this.Items[0][property]) == "string") {
+            this.Items.sort(function(a,b) {
+            a = a[property].toLowerCase();
+            b = b[property].toLowerCase();
+            if( a == b) return 0;
+            return b < a ? -1 : 1;
+            });
+        } else {
+            this.Items.sort(function(a, b){
+            return b[property] - a[property]
+            })
+        }
+        this.publish("Sorted Items in descending order on " + "'"+property+"'"+" column.", this)
+        }
+    }
 }
