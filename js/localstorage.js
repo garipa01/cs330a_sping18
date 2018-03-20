@@ -11,8 +11,8 @@ class LocalStorage {
             let saved_list = JSON.parse(localStorage.getItem(self.key))
             console.log(saved_list)
             for(let part of saved_list){
-                let item = new Item(part.name, part.quanity, part.priority, part.store, part.section, part.price)
-                model.add(item)
+                let item = new Item(part.name, part.quantity, part.priority, part.store, part.section, part.price)
+                model.addItem(item)
             }
 
         }

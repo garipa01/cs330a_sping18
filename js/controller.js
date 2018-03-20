@@ -13,6 +13,6 @@ function clickedon() {
 }
 
 function sortCol(col){
-    let property = col.textContext.toLowerCase()
+    let property = col.textContext.toLowerCase();
     shoppinglist.sortItems(property)
 }

@@ -99,5 +99,5 @@ class ShoppingList extends Subject {
         }
         this.publish("Sorted Items in descending order on " + "'"+property+"'"+" column.", this)
         }
-    }
 }
+
