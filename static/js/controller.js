@@ -1,6 +1,5 @@
 var shoppinglist = new ShoppingList()
 var view = new View(shoppinglist)
-//var storage = new LocalStorage(shoppinglist, "key")
 fetch('http://127.0.0.1:5001/getlist')
 .then(function(response){return response.text()})
 .then(function(text){
@@ -33,7 +32,7 @@ function restoreList(savedlist){
         for(let i = 0; i < itemdict.length; i++){
             item = itemdict[i]
             console.log(item)
-            restoreditem = new Item(item.name, item.quanity, item.priority, item.store, item.section, item.price, item._purchased)
+            let restoreditem = new Item(item.name, item.quantity, item.priority, item.store, item.section, item.price, item._purchased)
             shoppinglist.Items.push(restoreditem)
             view.redrawList(shoppinglist, "initialize")
         }
