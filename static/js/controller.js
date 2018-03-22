@@ -1,6 +1,15 @@
 var shoppinglist = new ShoppingList()
 var view = new View(shoppinglist)
-var storage = new LocalStorage(shoppinglist, "key")
+//var storage = new LocalStorage(shoppinglist, "key")
+fetch('http://127.0.0.1:5001/getlist')
+.then(function(response){return response.text()})
+.then(function(text){
+    console.log(text)
+    let list_torestore = JSON.parse(text)
+    console.log(list_torestore)
+    restoreList(list_torestore)
+})
+
 
 function clickedon() {
     let rowcolids = ['itemname', 'qty', 'store', 'category', 'price', 'priority']
@@ -16,3 +25,16 @@ function sortCol(col){
     let property = col.textContext.toLowerCase();
     shoppinglist.sortItems(property)
 }
+
+function restoreList(savedlist){
+    if(savedlist != null)        
+        itemdict = JSON.parse(savedlist)
+        console.log(itemdict)
+        for(let i = 0; i < itemdict.length; i++){
+            item = itemdict[i]
+            console.log(item)
+            restoreditem = new Item(item.name, item.quanity, item.priority, item.store, item.section, item.price, item._purchased)
+            shoppinglist._items.push(restoreditem)
+            redrawTable(myshoppinglist, "initialize")
+        }
+    }
