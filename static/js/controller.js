@@ -5,9 +5,9 @@ fetch('http://127.0.0.1:5001/getlist')
 .then(function(response){return response.text()})
 .then(function(text){
     console.log(text)
-    let list_torestore = JSON.parse(text)
-    console.log(list_torestore)
-    restoreList(list_torestore)
+    let list = JSON.parse(text)
+    console.log(list)
+    restoreList(list)
 })
 
 
@@ -34,7 +34,7 @@ function restoreList(savedlist){
             item = itemdict[i]
             console.log(item)
             restoreditem = new Item(item.name, item.quanity, item.priority, item.store, item.section, item.price, item._purchased)
-            shoppinglist._items.push(restoreditem)
-            redrawTable(myshoppinglist, "initialize")
+            shoppinglist.Items.push(restoreditem)
+            view.redrawList(shoppinglist, "initialize")
         }
     }

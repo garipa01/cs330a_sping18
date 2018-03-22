@@ -7,19 +7,17 @@ app = Flask(__name__)
 
 @app.route('/savelist', methods = ["POST"]) 
 def savelist():
-    list_tosave =request.json
-    savefile = open("list.txt", "w")
-    savefile.write(json.dumps(list_tosave))
-
+    list_ = request.json
+    listfile = open("list.txt", "w")
+    listfile.write(json.dumps(list_))
     res = Response('')
-
     return res
 
 @app.route('/getlist')
 def restorelist():
-    savefile = open("list.txt", "r")
-    memory = savefile.read()
-    res = Response(json.dumps(memory))
+    listfile = open("list.txt", "r")
+    list_ = listfile.read()
+    res = Response(json.dumps(list_))
     res.headers = {'Content-Type':'application/json'}
     return res
 
