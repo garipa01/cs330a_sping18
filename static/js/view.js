@@ -10,18 +10,6 @@ class View {
         for (let item of shoppingList.Items) {
             this.addRow(item, tb)
         }
-
-        let config = {}
-        config.method = "POST"
-        config.body = JSON.stringify(shoppinglist.Items)
-        config.headers = {"Content-Type":"application/json", "Accept" : "application/json"}
-        fetch("http://127.0.0.1:5001/savelist", config)
-        .then(function(response){return response.status})
-        .then(function(status){
-            if(status != 200){
-                alert("List not saved!")
-            }
-        })
 }
 
     addRow(item, parent) {
