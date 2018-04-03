@@ -6,10 +6,11 @@ class remotesaver {
         model.subscribe(function(list, key){
             self.save(list)
         })
-
+        console.log("get request")
         fetch('/getlist')
         .then(function(response){return response.text()})
             .then(function(text){
+                console.log("hey")
                 return JSON.parse(text)    
             }).then(function(list){self.restoreList(list,model)})
     }

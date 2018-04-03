@@ -1,1 +1,1 @@
-[{"handlers": [null], "name": "Milk", "section": "Produce", "priority": "low", "store": "Walmart", "quantity": "1", "price": "12", "_purchased": false}]
+[{"quantity": "1", "section": "Produce", "name": "Milk", "_purchased": false, "price": "12", "priority": "low", "handlers": [null], "store": "Walmart"}]
